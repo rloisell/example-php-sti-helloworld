@@ -12,16 +12,16 @@ This is an example php application, which can be deployed to APPUiO using the fo
 
 ### CLI / oc Client
 
-#### Create New OpenShift Project
+#### Create New OpenShift Project - not required if using AG LAB Space on BC Gov OCP
 ```
 $ oc new-project example-php-sti-helloworld
 ```
 
 #### Create Application and expose Service
 ```
-$ oc new-app https://github.com/appuio/example-php-sti-helloworld.git --name=appuio-php-sti-example
+$ oc new-app https://github.com/rloisell/example-php-sti-helloworld.git --name=agpssg-php-sti-example
 
-$ oc expose service appuio-php-sti-example
+$ oc expose service agpssg-php-sti-example
 ```
 
 ## Add Webhook to trigger rebuilds
@@ -29,7 +29,7 @@ $ oc expose service appuio-php-sti-example
 Take the Webhook GitHub URL from
 
 ```
-$ oc describe bc appuio-php-sti-example
+$ oc describe bc agpssg-php-sti-example
 
 oc describe bc appuio-php-sti-example
 Name:			appuio-php-sti-example
