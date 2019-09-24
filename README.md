@@ -22,7 +22,7 @@ $ oc new-project example-php-sti-helloworld
 $ oc new-app https://github.com/rloisell/example-php-sti-helloworld.git --name=agpssg-php-sti-example
 ```
 #### OUTPUT:
-
+```
 $ oc new-app https://github.com/rloisell/example-php-sti-helloworld.git --name=agpssg-php-sti-example
 --> Found image e71521d (8 months old) in image stream "openshift/php" under tag "7.1" for "php"
 
@@ -51,26 +51,31 @@ $ oc new-app https://github.com/rloisell/example-php-sti-helloworld.git --name=a
      'oc expose svc/agpssg-php-sti-example' 
     Run 'oc status' to view your app.
 $ 
+```
 
+#### Expose your new PHP Service
 ```
 $ oc expose service agpssg-php-sti-example
 ```
-
-OUTPUT:
+#### OUTPUT:
+```
 $ oc expose service agpssg-php-sti-example
 route.route.openshift.io/agpssg-php-sti-example exposed
 $
+```
 
 #### Get URL
 ```
 $ oc status | grep php
 ```
-OUTPUT:
+#### OUTPUT:
+```
 $ oc status | grep php
 http://agpssg-php-sti-example-ag-devops-lab-deploy.pathfinder.gov.bc.ca to pod port 8080-tcp (svc/agpssg-php-sti-example)
   dc/agpssg-php-sti-example deploys istag/agpssg-php-sti-example:latest <-
     bc/agpssg-php-sti-example source builds https://github.com/rloisell/example-php-sti-helloworld.git on openshift/php:7.1 
 $
+```
 
 ## Add Webhook to trigger rebuilds
 
